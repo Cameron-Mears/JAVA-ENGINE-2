@@ -1,5 +1,7 @@
 package com.game.entites;
 
+import java.awt.Graphics2D;
+
 import com.engine.instance.HealthInstance;
 import com.engine.instance.Instance;
 
@@ -18,7 +20,7 @@ public class Player extends Instance
     }
 
     @Override
-    public void render() 
+    public void render(Graphics2D g) 
     {
         
 

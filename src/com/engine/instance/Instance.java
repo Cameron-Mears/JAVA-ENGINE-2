@@ -1,5 +1,6 @@
 package com.engine.instance;
 
+import com.engine.physics.CollisionMask;
 import com.engine.util.datastruct.GNode;
 
 public abstract class Instance
@@ -53,4 +54,6 @@ public abstract class Instance
     public abstract void onDestroy();
 
     protected void healthIsZero(HealthInstance instance) {};
+    
+    public final CollisionMask getCollisionMask() {return null;};
 }

@@ -1,6 +1,11 @@
 package com.engine.util.math;
 
-import com.engine.graphics.Point;
+import java.util.ArrayList;
+
+import com.engine.instance.Instance;
+import com.engine.physics.Point2;
+import com.engine.util.datastruct.Pair;
+import java.util.Comparator;
 
 public final class GMath
 {
@@ -23,8 +28,18 @@ public final class GMath
         }
         return product;
     }
+    
+    public static long sum(int num)
+    {
+    	return ((num*num)+num)/2;
+    }
+    
+    public static double sumTerms(int numTerms, MathFunction func)
+    {
+    	return func.function(0);
+    }
 
-    public static Point rotate(Point point, double radians) //returns a new Point2 that is the rotated point
+    public static Point2 rotate(Point2 point, double radians) //returns a new Point2 that is the rotated point
     {
         double cos = Math.cos(radians);
         double sin = Math.sin(radians);
@@ -33,7 +48,20 @@ public final class GMath
         x = (point.x * cos)  - (point.y * sin);
         y = (point.x * sin) + (point.y * cos);
 
-        return new Point(x, y);
+        return new Point2(x, y);
+    }
+    
+    public static Point2[] rotatePoints(Point2[] points, double radians) //returns a new Point2 that is the rotated point
+    {
+        Point2[] rotated = new Point2[points.length];
+        
+        for (int index = 0; index < points.length; index++) 
+        {
+			rotated[index] = rotate(points[index], radians);
+			
+		}
+        
+        return rotated;
     }
 
     public static double clamp(double val, double min, double max)
@@ -68,5 +96,28 @@ public final class GMath
         if (val > max)
             return max;
         return val;
+    }
+    
+    
+    public static void sort(Object[] objects, Comparator<Object> comparer)
+    {
+    	
+    }
+    
+    public ArrayList<Pair<Instance, Double>> sortByDistance(ArrayList<Instance> instances, Instance target)
+    {
+    	ArrayList<Pair<Instance,Double>> solved = new ArrayList<Pair<Instance,Double>>(instances.size());
+    	for (Instance instance : instances) 
+    	{
+
+		}
+    	
+    }
+    
+    public class DoubleCompare implements Comparator
+    {
+
+		
+    	
     }
 }

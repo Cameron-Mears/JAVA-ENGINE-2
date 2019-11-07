@@ -1,5 +1,7 @@
 package com.engine.physics;
 
+import com.engine.geom.*;
+
 import com.engine.graphics.Sprite;
 
 public class CollisionMask
@@ -11,6 +13,7 @@ public class CollisionMask
     
     private Vector2 posiotion;
     private boolean follow;
+    private Shape[] mask;
     
     public CollisionMask(Sprite sprite)
     {
@@ -24,12 +27,19 @@ public class CollisionMask
 
     public boolean intersects(CollisionMask other)
     {
-    	return false;
+    	boolean collision = false;
+    	for (Shape collider : mask) 
+    	{
+    		return collider.in
+		}
     }
 
-
+    public Shape getCollider()
+    {
+    	return null;
+    }
     
-    public void scale(double factor) {};
+   
 
 
 }

@@ -1,17 +1,21 @@
 package com.engine.pathfind;
 
 import java.util.ArrayList;
-import java.util.Stack;
+import java.util.Map;
 
 import com.engine.instance.Instance;
 import com.engine.physics.CollisionMask;
+import com.engine.physics.Point2;
 import com.engine.physics.Vector2;
 import com.engine.util.datastruct.list.List;
 
-public class AStar 
+public class AStar
 {
-	ArrayList<CollisionMask> avoid;
-	ArrayList<ArrayList<AStarNode>> nodes;
+	ArrayList<CollisionMask> unavaiable;
+	ArrayList<ArrayList<AStarNode>> nodesOpen;
+	ArrayList<ArrayList<AStarNode>> nodesClosed;
+	ArrayList<AStarNode> lowestCost;
+	
 	private static int NodeWidth;
 	private static int NodeHeight;
 	private static CollisionMask nodeCollider;
@@ -22,37 +26,18 @@ public class AStar
 		NodeWidth = 32;
 		
 	}
-	
-	
-	
-	
-	
-	private class AStarNode
+
+	public void applyCollisionMasks()
 	{
-		public int aCost, bCost, cCost, x, y;
-		private ArrayList<AStarNode> closet;
-		public void update(int aCost, int bCost)
+		for (CollisionMask collider : unavaiable) 
 		{
 			
 		}
-		
-		public void expand(ArrayList<ArrayList<AStarNode>> nodes, ArrayList<CollisionMask> avoid)
-		{
-			avoid.clear();
-			
-			for (int neighbourX = -1; neighbourX < 1; neighbourX ++) 
-			{
-				for (int neighbourY = -1; neighbourY < 1; neighbourY ++) 
-				{
-					
-				}
-			}
-			
-		}
-		
-		public AStarNode resloveNext()
-		{
-			return null;
-		}
+	}
+	
+	public ArrayList<AStarNode> findPath(AStarNode start, AStarNode goal, int maxSteps)
+	{
+		this.applyCollisionMasks();
+		return null;
 	}
 }

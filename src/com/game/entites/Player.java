@@ -20,7 +20,7 @@ public class Player extends Instance
     }
 
     @Override
-    public void render(Graphics2D g) 
+    public void render() 
     {
         
 

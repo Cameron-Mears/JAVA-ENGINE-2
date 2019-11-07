@@ -20,7 +20,8 @@ public class GameMusic extends Instance
 	}
 
 	@Override
-	public void render(Graphics2D g) {
+	public void render() 
+	{
 		// TODO Auto-generated method stub
 		
 	}
